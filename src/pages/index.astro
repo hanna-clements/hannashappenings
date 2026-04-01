@@ -1,28 +1,24 @@
 ---
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Hanna's Happenings</title>
-  </head>
-  <body>
-    <h1>Hanna's Happenings</h1>
-    <p>A monthly newsletter by Hanna D. Clements about exploring hobbies and creative pursuits.</p>
+<Layout title="Hanna's Happenings">
+  <h1>Hanna's Happenings</h1>
+  <h2>Welcome!</h2>
+  <p>
+    Each month, I share art and musings from my creative pursuits, hobbies, and everyday life. 
+    Whether you're looking for your next creative outlet or want to keep up with my latest interests, you're in the right place!
+  </p>
 
-    <h2>Subscribe</h2>
-    <p><a href="https://buttondown.com/hannnashappenings">Join the mailing list</a></p>
+  <h2>Subscribe</h2>
+  <p><a href="https://buttondown.com/hannnashappenings">Join the Hanna's Happenings mailing list</a></p>
 
-<h2>Archive</h2>
-    <ul>
-      <li><a href="/newsletter/March-2026.pdf">March 2026</a></li>
-      <li><a href="/newsletter/February-2026.pdf">February 2026</a></li>
-      <li><a href="/newsletter/January-2026.pdf">January 2026</a></li>
-      <li><a href="/newsletter/December-2025.pdf">December 2025</a></li>
-      <li><a href="/newsletter/November-2025.pdf">November 2025</a></li>
-      <li><a href="/newsletter/October-2025.pdf">October 2025</a></li>
-    </ul>
+  <h2>Recent Issues</h2>
+  <ul>
+    <li><a href="/newsletter/March-2026.pdf">March 2026</a></li>
+    <li><a href="/newsletter/February-2026.pdf">February 2026</a></li>
+    <li><a href="/newsletter/January-2026.pdf">January 2026</a></li>
+  </ul>
 
-  </body>
-</html>
+  <p><a href="/archive">See the full archive →</a></p>
+</Layout>
