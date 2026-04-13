@@ -10,9 +10,6 @@ import Layout from '../layouts/Layout.astro';
     Whether you're looking for your next creative outlet or want to keep up with my latest interests, you're in the right place!
   </p>
 
-  <h2>Subscribe</h2>
-  <p><a href="https://buttondown.com/hannnashappenings">Join the Hanna's Happenings mailing list</a></p>
-
   <h2>Recent Issues</h2>
   <ul>
     <li><a href="/newsletter/March-2026.pdf">March 2026</a></li>
@@ -21,4 +18,93 @@ import Layout from '../layouts/Layout.astro';
   </ul>
 
   <p><a href="/archive">See the full archive →</a></p>
+
+  <h2>Subscribe</h2>
+  <form
+    action="https://buttondown.com/api/emails/embed-subscribe/hannashappenings"
+    method="post"
+    class="subscribe-form"
+    novalidate
+  >
+    <div class="form-group">
+      <label for="bd-email">Email address <span class="required">*</span></label>
+      <input
+        type="email"
+        name="email"
+        id="bd-email"
+        required
+        aria-describedby="email-error"
+        autocomplete="email"
+      />
+      <div id="email-error" class="error-message" role="alert" aria-live="polite"></div>
+    </div>
+    
+    <div class="form-group">
+      <label for="bd-first-name">First name</label>
+      <input
+        type="text"
+        name="first_name"
+        id="bd-first-name"
+        autocomplete="given-name"
+      />
+    </div>
+    
+    <div class="form-group">
+      <label for="bd-last-name">Last name</label>
+      <input
+        type="text"
+        name="last_name"
+        id="bd-last-name"
+        autocomplete="family-name"
+      />
+    </div>
+    
+    <input
+      type="submit"
+      value="Subscribe"
+      class="subscribe-button"
+      disabled
+    />
+    
+    <p class="powered-by">
+      <a href="https://buttondown.com/refer/hannashappenings" target="_blank" rel="noopener">
+        Powered by Buttondown.
+      </a>
+    </p>
+  </form>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.querySelector('.subscribe-form');
+      const emailInput = document.getElementById('bd-email');
+      const submitButton = document.querySelector('.subscribe-button');
+      const emailError = document.getElementById('email-error');
+
+      function validateEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+      }
+
+      function updateSubmitButton() {
+        const email = emailInput.value.trim();
+        const isValidEmail = validateEmail(email);
+        
+        submitButton.disabled = !isValidEmail;
+        
+        if (email && !isValidEmail) {
+          emailError.textContent = 'Please enter a valid email address';
+          emailInput.setAttribute('aria-invalid', 'true');
+        } else {
+          emailError.textContent = '';
+          emailInput.setAttribute('aria-invalid', 'false');
+        }
+      }
+
+      emailInput.addEventListener('input', updateSubmitButton);
+      emailInput.addEventListener('blur', updateSubmitButton);
+
+      // Initial validation
+      updateSubmitButton();
+    });
+  </script>
 </Layout>
