@@ -3,9 +3,11 @@ import Navigation from '../components/Navigation.astro';
 
 interface Props {
   title?: string;
+  description?: string;
+  image?: string;
 }
 
-const { title = "Hanna's Happenings" } = Astro.props;
+const { title = "Hanna's Happenings", description = "Monthly newsletter sharing art, creative pursuits, and musings by Hanna D. Clements", image = "/H.jpg" } = Astro.props;
 ---
 
 <!doctype html>
@@ -16,6 +18,20 @@ const { title = "Hanna's Happenings" } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/H.jpg" />
 		<link rel="icon" href="/H.jpg" />
 		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<meta name="keywords" content="art newsletter, creative hobbies, monthly musings, Hanna Clements" />
+		<link rel="canonical" href={Astro.url} />
+		<!-- Open Graph -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={new URL(image, Astro.site)} />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:type" content="website" />
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={new URL(image, Astro.site)} />
 		<title>{title}</title>
 	</head>
 	<body>
