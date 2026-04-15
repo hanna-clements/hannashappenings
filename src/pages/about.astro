@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Comments from '../components/Comments.astro';
 ---
 
 <Layout title="About - Hanna's Happenings">
@@ -37,9 +38,13 @@ import Layout from '../layouts/Layout.astro';
 
   <h2>Get in Touch</h2>
   <p>
-    Reply to any newsletter email, or subscribe below.
+    Reply to any newsletter email, or get in touch using the comment box below.
   </p>
   <p>
     <a href="https://buttondown.com/hannnashappenings">Subscribe to Hanna's Happenings</a>
+  </p>
+    <Comments />
+  <p style="margin-top: 2rem; text-align: center;">
+    <a href="/">← Back to home</a>
   </p>
 </Layout>
