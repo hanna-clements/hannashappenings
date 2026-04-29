@@ -6,6 +6,12 @@ export async function GET(context) {
   // In the future, you can replace this with actual content
   const items = [
     {
+      title: 'April 2026 Issue',
+      description: 'The April issue of Hanna\'s Happenings is here! This month is all about handmade gifts, featuring a PG-13 stamp hoodie, a crocheted bunny stuffed animal, and a beaded hummingbird patch.',
+      link: '/newsletter/April-2026.pdf',
+      pubDate: new Date('2026-04-01'),
+    },
+    {
       title: 'March 2026 Issue',
       description: 'This month I went off-script from my editorial calendar to share a recent denim upcycling project.',
       link: '/newsletter/March-2026.pdf',
