@@ -7,7 +7,7 @@ interface Props {
   image?: string;
 }
 
-const { title = "Hanna's Happenings", description = "Monthly newsletter sharing art, creative pursuits, and musings by Hanna D. Clements", image = "/H.jpg" } = Astro.props;
+const { title = "Hanna's Happenings", description = "Monthly newsletter sharing art, creative pursuits, and musings by Hanna D. Clements", image = "/images/H.jpg" } = Astro.props;
 ---
 
 <!doctype html>
@@ -15,8 +15,8 @@ const { title = "Hanna's Happenings", description = "Monthly newsletter sharing 
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/H.jpg" />
-		<link rel="icon" href="/H.jpg" />
+		<link rel="icon" type="image/svg+xml" href="/images/H.jpg" />
+		<link rel="icon" href="/images/H.jpg" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
 		<meta name="keywords" content="art newsletter, creative hobbies, monthly musings, Hanna Clements" />
@@ -159,6 +159,96 @@ const { title = "Hanna's Happenings", description = "Monthly newsletter sharing 
 		color: var(--text-muted);
 		margin-top: auto;
 		font-size: 0.9rem;
+	}
+
+	.issue-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+		gap: 1.5rem;
+		margin-top: 1.25rem;
+	}
+
+	.issue-card,
+	.archive-card,
+	.featured-card {
+		background: #fff;
+		border: 1px solid var(--border-color);
+		border-radius: 1rem;
+		overflow: hidden;
+		box-shadow: 0 10px 24px rgba(12, 42, 62, 0.09);
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.issue-card:hover,
+	.archive-card:hover,
+	.featured-card:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 14px 30px rgba(12, 42, 62, 0.12);
+	}
+
+	.issue-card img,
+	.archive-card img {
+		width: 100%;
+		aspect-ratio: 4 / 3;
+		object-fit: cover;
+		display: block;
+	}
+
+	.issue-card-content,
+	.archive-card-content {
+		padding: 1rem;
+	}
+
+	.issue-card-content h3,
+	.archive-card-content h3 {
+		margin: 0 0 0.75rem 0;
+		font-size: 1.1rem;
+	}
+
+	.issue-card-content p,
+	.archive-card-content p {
+		margin: 0;
+		margin-top: 0.5rem;
+		font-size: 0.95rem;
+		color: var(--text-dark);
+		line-height: 1.75;
+	}
+
+	.archive-card {
+		display: block;
+	}
+
+	.issue-card a,
+	.issue-card h3 a,
+	.archive-card h3 a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	.issue-card h3 a:hover,
+	.archive-card h3 a:hover {
+		color: var(--primary-dark);
+	}
+
+	@media (min-width: 720px) {
+		.archive-card img {
+			width: 100%;
+			height: auto;
+			aspect-ratio: 4 / 3;
+		}
+	}
+
+	.featured-card {
+		max-width: 840px;
+		margin: 0 auto 2rem auto;
+	}
+
+	.featured-card img {
+		aspect-ratio: 4 / 3;
+	}
+
+	.featured-card .issue-card-content {
+		padding: 2rem;
 	}
 
 	/* Subscribe Form Styles */

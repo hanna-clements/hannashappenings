@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import IssueCard from '../components/IssueCard.astro';
+import { recentIssues } from '../data/issues';
 ---
 
 <Layout title="Hanna's Happenings">
@@ -13,16 +15,10 @@ import Layout from '../layouts/Layout.astro';
   </p>
 
   <h2>Recent Issues</h2>
-  <div class="featured-issue">
-    <p><a href="/newsletter/April-2026.pdf">The April issue of <i>Hanna's Happenings</i> is here!</a> This month I wrote about handmade gifts.</p>
-    
-    <p>Here are some of the highlights:</p>
-    <ul>
-      <li>A juicy peach stamp for my artistic friend </li>
-      <li>A crocheted bunny stuffed animal </li>
-      <li>A beaded hummingbird patch </li>
-      <li><i>And much more!</i></li>
-      </ul>
+  <div class="issue-grid">
+    {recentIssues.map((issue) => (
+      <IssueCard issue={issue} />
+    ))}
   </div>
 
   <p><a href="/archive">Browse the full archive →</a></p>

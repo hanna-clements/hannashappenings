@@ -1,0 +1,117 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Comments from '../../components/Comments.astro';
+import { getIssueBySlug, getIssuePaths } from '../../data/issues';
+
+export function getStaticPaths() {
+  return getIssuePaths();
+}
+
+const issue = getIssueBySlug(Astro.params.slug);
+if (!issue) {
+  throw new Error(`Issue not found: ${Astro.params.slug}`);
+}
+---
+
+<Layout title={issue.title} description={issue.description} image={issue.image}>
+  <article class="issue-landing">
+    <h1>{issue.title}</h1>
+    <img src={issue.image} alt={issue.imageAlt} />
+    <p>{issue.description}</p>
+    {issue.comment ? <p class="issue-comment">{issue.comment}</p> : null}
+    <div class="issue-actions">
+      <a href={issue.pdfHref} class="issue-cta" target="_blank" rel="noopener">Read the full PDF</a>
+      <a href="/archive" class="issue-secondary">See the archive</a>
+    </div>
+    <Comments />
+  </article>
+</Layout>
+
+<style is:global>
+  .issue-landing {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+
+  .issue-meta {
+    color: var(--text-muted);
+    margin-bottom: 0.25rem;
+    font-size: 0.95rem;
+  }
+
+  .issue-landing h1 {
+    margin: 0 0 1rem 0;
+    font-size: 2rem;
+    line-height: 1.1;
+  }
+
+  .issue-landing img {
+    width: 100%;
+    max-height: 450px;
+    object-fit: cover;
+    border-radius: 1rem;
+    margin: 1rem 0 1.25rem 0;
+  }
+
+  .issue-landing p {
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .issue-comment {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--primary-dark);
+    font-size: 1rem;
+    line-height: 1.8;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1rem;
+  }
+
+  .issue-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+
+  .issue-cta,
+  .issue-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 1.3rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  .issue-cta {
+    background: var(--primary-color);
+    color: white;
+  }
+
+  .issue-cta:hover {
+    background: var(--primary-dark);
+  }
+
+  .issue-secondary {
+    border: 1px solid var(--border-color);
+    color: var(--text-dark);
+    background: #fff;
+  }
+
+  .issue-secondary:hover {
+    background: var(--bg-light);
+  }
+
+  .issue-note {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+  }
+</style>

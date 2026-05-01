@@ -1,0 +1,23 @@
+---
+import type { Issue } from '../data/issues';
+import { issuePageUrl } from '../data/issues';
+
+interface Props {
+  issue: Issue;
+  variant?: 'featured' | 'archive';
+}
+
+const { issue, variant = 'featured' } = Astro.props as Props;
+const isArchive = variant === 'archive';
+const issueLink = issuePageUrl(issue);
+---
+
+<article class={`issue-card ${isArchive ? 'archive-card' : 'featured-card'}`}>
+  <a href={issueLink} class="issue-card-link">
+    <img src={issue.image} alt={issue.imageAlt} loading="lazy" />
+  </a>
+  <div class="issue-card-content">
+    <h3><a href={issueLink}>{issue.title}</a></h3>
+    <p>{issue.description}</p>
+  </div>
+</article>

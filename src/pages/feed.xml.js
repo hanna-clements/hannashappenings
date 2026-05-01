@@ -1,36 +1,13 @@
 import rss from '@astrojs/rss';
-import { getCollection } from 'astro:content';
+import { issues, issuePageUrl } from '../data/issues';
 
 export async function GET(context) {
-  // Since you don't have a content collection yet, we'll manually define items
-  // In the future, you can replace this with actual content
-  const items = [
-    {
-      title: 'April 2026 Issue',
-      description: 'The April issue of Hanna\'s Happenings is here! This month is all about handmade gifts, featuring a PG-13 stamp hoodie, a crocheted bunny stuffed animal, and a beaded hummingbird patch.',
-      link: '/newsletter/April-2026.pdf',
-      pubDate: new Date('2026-04-01'),
-    },
-    {
-      title: 'March 2026 Issue',
-      description: 'This month I went off-script from my editorial calendar to share a recent denim upcycling project.',
-      link: '/newsletter/March-2026.pdf',
-      pubDate: new Date('2026-03-01'),
-    },
-    {
-      title: 'February 2026 Issue',
-      description: 'February 2026 newsletter issue.',
-      link: '/newsletter/February-2026.pdf',
-      pubDate: new Date('2026-02-01'),
-    },
-    {
-      title: 'January 2026 Issue',
-      description: 'January 2026 newsletter issue.',
-      link: '/newsletter/January-2026.pdf',
-      pubDate: new Date('2026-01-01'),
-    },
-    // Add more as you publish
-  ];
+  const items = issues.map((issue) => ({
+    title: issue.title,
+    description: issue.description,
+    link: issuePageUrl(issue),
+    pubDate: new Date(issue.date),
+  }));
 
   return rss({
     title: 'Hanna\'s Happenings',
