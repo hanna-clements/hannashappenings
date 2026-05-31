@@ -17,7 +17,7 @@ if (!issue) {
   <article class="issue-landing">
     <h1>{issue.title}</h1>
     <img src={issue.image} alt={issue.imageAlt} />
-    <p>{issue.description}</p>
+    <p set:html={issue.description}></p>
     {issue.comment ? <p class="issue-comment">{issue.comment}</p> : null}
     <div class="issue-actions">
       <a href={issue.pdfHref} class="issue-cta" target="_blank" rel="noopener">Read the full PDF</a>

@@ -18,6 +18,6 @@ const issueLink = issuePageUrl(issue);
   </a>
   <div class="issue-card-content">
     <h3><a href={issueLink}>{issue.title}</a></h3>
-    <p>{issue.description}</p>
+    <p set:html={issue.description}></p>
   </div>
 </article>

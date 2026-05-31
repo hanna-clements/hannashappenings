@@ -24,12 +24,11 @@ const rawIssues: Issue[] = [
   {
     slug: 'may-2026',
     title: 'May 2026 - Spring Foraging Issue',
-    description: 'This issue covers foraging in the brief, capricious windows of a coastal BC spring: what to look for, how to prepare it, and why it’s worth slowing down to find it.',
+    description: 'This installment of <i>Hanna’s Happenings</i> covers foraging in the brief, capricious windows of spring in coastal BC: what to look for, how to prepare it, and why it’s worth slowing down to find it.',
     image: '/images/MAY-2026-Hanna_with_cookie.jpg',
     imageAlt: 'May issue hero image',
     date: '2026-05-01',
     pdfHref: '/newsletter/May-2026.pdf',
-    featured: true,
   },
   {
     slug: 'march-2026',
