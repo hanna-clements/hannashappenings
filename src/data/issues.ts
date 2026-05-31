@@ -22,6 +22,16 @@ const rawIssues: Issue[] = [
     featured: true,
   },
   {
+    slug: 'may-2026',
+    title: 'May 2026 - Spring Foraging Issue',
+    description: 'This issue covers foraging in the brief, capricious windows of a coastal BC spring: what to look for, how to prepare it, and why it’s worth slowing down to find it.',
+    image: '/images/MAY-2026-Hanna_with_cookie.jpg',
+    imageAlt: 'May issue hero image',
+    date: '2026-05-01',
+    pdfHref: '/newsletter/May-2026.pdf',
+    featured: true,
+  },
+  {
     slug: 'march-2026',
     title: 'March 2026 - Denim Upcycling',
     description: 'I transformed a pair of old jeans into a statement piece using a classic quilt block motif. Plus an upcycled denim patchwork pouch.',
