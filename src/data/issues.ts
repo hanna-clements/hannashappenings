@@ -12,6 +12,16 @@ export type Issue = {
 
 const rawIssues: Issue[] = [
   {
+    slug: 'june-2026',
+    title: 'June 2026 - Summer Solstice Recap',
+    description: 'A recap of my favourite day of the year: the Summer Solstice. I spent the 16 hours and 12 minutes of daylight chasing the sun, watching wildlife, and working on a new creative project.',
+    image: '/images/JUNE-2026_solstice_first_light.jpg',
+    imageAlt: 'June 2026 solstice first light',
+    date: '2026-06-01',
+    pdfHref: '/newsletter/June-2026.pdf',
+    featured: true,
+  },
+  {
     slug: 'april-2026',
     title: 'April 2026 - Made with Love',
     description: 'Handmade gifts for people I love. This issue includes linocut printing, amigurumi crochet, beaded embroidery, and more!',
