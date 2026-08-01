@@ -22,14 +22,24 @@ const rawIssues: Issue[] = [
     featured: true,
   },
   {
+    slug: 'july-2026',
+    title: 'July 2026 - Backpacking the West Coast Trail',
+    description:
+      'My trip on the West Coast Trail: 75 km of ladders, mud, and beaches. Including homemade backpacking meals, otter and whale sightings, and adapting to a change of plans.',
+    image: '/images/JULY-2026-hanna_on_bridge.jpg',
+    imageAlt: 'Hanna on a bridge on the West Coast Trail',
+    date: '2026-07-01',
+    pdfHref: '/newsletter/July_2026.pdf',
+    featured: true,
+  },
+  {
     slug: 'april-2026',
     title: 'April 2026 - Made with Love',
     description: 'Handmade gifts for people I love. This issue includes linocut printing, amigurumi crochet, beaded embroidery, and more!',
     image: '/images/APRIL-2026-Lid_making_prints.jpg',
     imageAlt: 'Colorful handmade prints and craft tools',
     date: '2026-04-01',
-    pdfHref: '/newsletter/April-2026.pdf',
-    featured: true,
+    pdfHref: '/newsletter/April-2026.pdf'
   },
   {
     slug: 'may-2026',
@@ -39,6 +49,7 @@ const rawIssues: Issue[] = [
     imageAlt: 'May issue hero image',
     date: '2026-05-01',
     pdfHref: '/newsletter/May-2026.pdf',
+    featured: true,
   },
   {
     slug: 'march-2026',
