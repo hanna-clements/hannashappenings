@@ -12,6 +12,17 @@ export type Issue = {
 
 const rawIssues: Issue[] = [
   {
+    slug: 'august-2026',
+    title: 'August 2026 - Summer Drawing and Painting',
+    description:
+      'A visual issue featuring watercolour and pen sketches, a coho salmon painting, poppy studies, zentangles, and more!',
+    image: '/images/AUG-2026-Lighthouse_Park.jpg',
+    imageAlt: 'Watercolour and pen sketches from Lighthouse Park',
+    date: '2026-08-01',
+    pdfHref: '/newsletter/August_2026.pdf',
+    featured: true,
+  },
+  {
     slug: 'june-2026',
     title: 'June 2026 - Summer Solstice Recap',
     description: 'A recap of my favourite day of the year: the Summer Solstice. I spent the 16 hours and 12 minutes of daylight chasing the sun, watching wildlife, and working on a new creative project.',
@@ -49,7 +60,7 @@ const rawIssues: Issue[] = [
     imageAlt: 'May issue hero image',
     date: '2026-05-01',
     pdfHref: '/newsletter/May-2026.pdf',
-    featured: true,
+    featured: false,
   },
   {
     slug: 'march-2026',
