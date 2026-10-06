@@ -12,7 +12,7 @@ export type Issue = {
 
 const rawIssues: Issue[] = [
   {
-    slug: 'git -2026',
+    slug: 'september-2026',
     title: 'September 2026 - Food Issue',
     description:
       'How food traditions travel and change: seafood boils, ferments made possible by gifts from my community, and a follow up on my summer berry foraging.',
