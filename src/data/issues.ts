@@ -19,7 +19,7 @@ const rawIssues: Issue[] = [
     image: '/images/SEPT-2026-hanna_with_crabs.jpg',
     imageAlt: 'Hanna with crabs and food traditions',
     date: '2026-09-01',
-    pdfHref: '/newsletter/September_2026.pdf',
+    pdfHref: '/newsletter/September-2026.pdf',
   },
   {
     slug: 'august-2026',
