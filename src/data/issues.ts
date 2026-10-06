@@ -15,7 +15,7 @@ const rawIssues: Issue[] = [
     slug: 'september-2026',
     title: 'September 2026 - Food Issue',
     description:
-      'How food traditions travel and change: seafood boils, ferments made possible by gifts from my community, along with a follow up on my summer berry foraging.',
+      'How food traditions travel and change: seafood boils, ferments made possible by gifts from my community, and a follow up on my summer berry foraging.',
     image: '/images/SEPT-2026-hanna_with_crabs.jpg',
     imageAlt: 'Hanna with crabs and food traditions',
     date: '2026-09-01',
