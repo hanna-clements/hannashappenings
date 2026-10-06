@@ -12,6 +12,16 @@ export type Issue = {
 
 const rawIssues: Issue[] = [
   {
+    slug: 'september-2026',
+    title: 'September 2026 - Food Issue',
+    description:
+      'How food traditions travel and change: seafood boils, ferments made possible by gifts from my community, along with a follow up on my summer berry foraging.',
+    image: '/images/SEPT-2026-hanna_with_crabs.jpg',
+    imageAlt: 'Hanna with crabs and food traditions',
+    date: '2026-09-01',
+    pdfHref: '/newsletter/September_2026.pdf',
+  },
+  {
     slug: 'august-2026',
     title: 'August 2026 - Summer Drawing and Painting',
     description:
@@ -50,7 +60,8 @@ const rawIssues: Issue[] = [
     image: '/images/APRIL-2026-Lid_making_prints.jpg',
     imageAlt: 'Colorful handmade prints and craft tools',
     date: '2026-04-01',
-    pdfHref: '/newsletter/April-2026.pdf'
+    pdfHref: '/newsletter/April-2026.pdf',
+    featured: false,
   },
   {
     slug: 'may-2026',
